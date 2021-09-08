@@ -1,0 +1,7 @@
+.nav-colorized{background: rgb(54,255,212);
+  background: -moz-linear-gradient(76deg, rgba(54,255,212,1) 0%, rgba(6,212,88,1) 82%);
+  background: -webkit-linear-gradient(76deg, rgba(54,255,212,1) 0%, rgba(6,212,88,1) 82%);
+  background: linear-gradient(76deg, rgba(54,255,212,1) 0%, rgba(6,212,88,1) 82%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#36ffd4",endColorstr="#06d458",GradientType=1);
+font-size: larger;
+font-weight: bolder;}

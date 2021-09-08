@@ -1,8 +1,6 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-/** disable angular mat theme warning */
-.mat-theme-loaded-marker {
-  display: none;
-}
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .form-container {
@@ -14,9 +12,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .form-container button {
   width: fit-content;
-}
-[ng-click],
-[data-ng-click],
-[x-ng-click] {
-    cursor: pointer;
 }

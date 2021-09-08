@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <h4 *ngIf="result == 0||this.getControls.lessons.invalid; else calculated" class="mt-5">
+      Ortalama Hesaplayıcı
+    </h4>
+    <hr />
+    <div class="add-lessons-form" [formGroup]="form">
+      <ng-container formArrayName="lessons">
+        <ng-container
+          *ngFor="let lessonForm of lessons.controls; let i = index"
+        >
+          <div
+            style="font-weight: bolder"
+            class="lesson-form-row form-container mt-3"
+            [formGroupName]="i"
+          >
+            {{ i + 1 }}. Ders
+            <mat-form-field>
+              <input
+                type="text"
+                placeholder="not seç"
+                formControlName="note"
+                matInput
+                [matAutocomplete]="auto"
+              />
+
+              <mat-autocomplete
+                [displayWith]="displayFn"
+                #auto="matAutocomplete"
+              >
+                <mat-option *ngFor="let item of notes" [value]="item">
+                  {{ item.viewValue }}
+                </mat-option>
+              </mat-autocomplete>
+              <mat-error>
+                <div *ngIf="this.getControls.lessons.invalid" class="mx-2">
+                  Notunuzu seçiniz
+                </div>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label class="mt-1">Kaç Kredi</mat-label>
+              <input type="number" matInput formControlName="credit" />
+              <mat-error>
+                <div *ngIf="this.getControls.lessons.invalid" class="">
+                  Ders kredisini giriniz
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </ng-container>
+      </ng-container>
+      <button
+        class="mb-5 mt-3"
+        (click)="addLesson()"
+        mat-raised-button
+        color="primary"
+      >
+        Hesapla
+      </button>
+    </div>
+  </div>
+</div>
+<ng-template #calculated>
+  <h4 class="mt-5">Ortalamanız: {{ result | number: ".2-2" }}</h4>
+</ng-template>
