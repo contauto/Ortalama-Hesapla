@@ -18,7 +18,7 @@ const routes: Routes = [{
   },
 
   {
-    path: "index",
+    path: "index.html",
     component: HomeComponent
   },
   {
