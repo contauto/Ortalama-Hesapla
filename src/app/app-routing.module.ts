@@ -18,6 +18,10 @@ const routes: Routes = [{
   },
 
   {
+    path: "index",
+    component: HomeComponent
+  },
+  {
     path: "ders/:numberOfLecture",
     component: CalcComponent
   },
